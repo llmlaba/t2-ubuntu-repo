@@ -1,5 +1,7 @@
 # APT repository for T2 Macs
 
+> Fork of [AdityaGarg8/t2-ubuntu-repo](https://github.com/AdityaGarg8/t2-ubuntu-repo), mirrored under the [llmlaba](https://github.com/llmlaba) organization.
+
 This GitHub repository has various apt repos, that can roughly be classified into 2 types:
 
 1. A **common apt repo** having packages for **Debian** and **Ubuntu**.
@@ -12,8 +14,8 @@ You have to add the **common apt repo** irrespective of whether you are using De
 ```bash
 sudo apt update
 sudo apt install -y curl
-curl -s --compressed "https://adityagarg8.github.io/t2-ubuntu-repo/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg >/dev/null
-sudo curl -s --compressed -o /etc/apt/sources.list.d/t2.list "https://adityagarg8.github.io/t2-ubuntu-repo/t2.list"
+curl -s --compressed "https://llmlaba.github.io/t2-ubuntu-repo/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg >/dev/null
+sudo curl -s --compressed -o /etc/apt/sources.list.d/t2.list "https://llmlaba.github.io/t2-ubuntu-repo/t2.list"
 sudo apt update
 ```
 
@@ -41,7 +43,7 @@ Now after you have added the common apt repo, you additionally have to add a **r
 
 ```bash
 CODENAME=resolute
-echo "deb [signed-by=/etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg] https://github.com/AdityaGarg8/t2-ubuntu-repo/releases/download/${CODENAME} ./" | sudo tee -a /etc/apt/sources.list.d/t2.list
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/t2-ubuntu-repo.gpg] https://github.com/llmlaba/t2-ubuntu-repo/releases/download/${CODENAME} ./" | sudo tee -a /etc/apt/sources.list.d/t2.list
 sudo apt update
 ```
 
@@ -66,7 +68,3 @@ You should be then be able to install and update the following packages with `ap
 - **t2-apple-audio-dsp-mic**: Mic configuration files for T2 Macs.
 - **t2-apple-audio-dsp-speakers161**: Pipewire filterchain configuration files for Macbook Pro 16 inch, 2019
 - **tiny-dfr**: Function row daemon for touchbar on Macs
-
-## Donate
-
-If you've really loved the work I've done so far for T2 Macs, and wanna help me out financially, you can donate me (AdityaGarg8) by following the instructions given [here](https://wiki.t2linux.org/contribute/#support-our-maintainers).
